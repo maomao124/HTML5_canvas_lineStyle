@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：HTML5_canvas_lineStyle
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/4
+  Time(创建时间)： 22:11
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid skyblue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600">
+    浏览器不支持画布功能
+</canvas>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    //设置线段顶端样式为square
+    ctx.lineCap = "square";
+    //设置线段宽度为5像素
+    ctx.lineWidth = "7";
+    //画笔设置为绿色描边
+    ctx.strokeStyle = "green";
+    ctx.scale(2, 2);
+    ctx.translate(0, 40)
+
+
+    ctx.beginPath();
+
+    ctx.moveTo(150, 20);
+    ctx.lineTo(100, 50);
+    ctx.lineTo(200, 50);
+    ctx.lineTo(150, 20);
+
+    ctx.moveTo(150, 50);
+    ctx.lineTo(80, 90);
+    ctx.lineTo(220, 90);
+    ctx.lineTo(150, 50);
+
+    ctx.moveTo(150, 90);
+    ctx.lineTo(60, 130);
+    ctx.lineTo(240, 130);
+    ctx.lineTo(150, 90);
+    ctx.stroke();
+    ctx.closePath();
+
+
+    ctx.strokeStyle = "brown";
+
+    ctx.beginPath();
+    ctx.moveTo(130, 135);
+    ctx.lineTo(130, 180);
+    ctx.lineTo(170, 180);
+    ctx.lineTo(170, 135);
+    ctx.stroke();
+    ctx.closePath();
+
+</script>
+</body>
+</html>
